@@ -5,13 +5,14 @@ FROM ubuntu:18.04
 ########################################################
 # Based on: https://github.com/shuhaoliu/docker-clion-dev
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ARG multilib_version=gcc-multilib-x86-64-linux-gnu
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \
     build-essential \
     cmake \
     g++ \
     gcc \
-    gcc-multilib \
+    ${multilib_version} \
     gdb \
     gdbserver \
     openssh-server \
